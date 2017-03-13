@@ -1,0 +1,4 @@
+.git
+.tern-project
+node_modules
+__deployme/**/*

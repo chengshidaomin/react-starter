@@ -1,0 +1,18 @@
+{
+  "name": "wanfan-starter",
+  "version": "1.0.0",
+  "description": "1. 命令\r ```\r  npm install -g browserify\r  npm install -g babel-cli\r  npm install --save-dev react\r  npm install --save-dev react-dom\r  npm install --save-dev babel-preset-react\r  npm install --save-dev babel-preset-es2015\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "watch": "^1.0.2"
+  }
+}

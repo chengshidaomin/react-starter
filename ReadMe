@@ -1,0 +1,39 @@
+## 软件安装
+1. 命令
+```
+ npm install -g browserify
+ npm install -g babel-cli
+ npm install --save-dev react
+ npm install --save-dev react-dom
+ npm install --save-dev babel-preset-react
+ npm install --save-dev babel-preset-es2015
+```
+
+2. 说明
+  - 使用Babel来解释ES6的代码
+  - bundle.css只是简单拼接
+  - 使用browserify创建bundle.js
+  - Browserify不仅仅拼接脚本，而且还解析并包含所有依赖，包含一个CommonJs实现来让require()调用可以执行。
+  Babel会将所有的import语句解释为require()函数调用
+
+3. 构建
+```
+# 将js/source目录下的js文件翻译后生成到js/build目录下
+babel --presets react,es2015 js/source -d js/build
+# 将翻译后的文件拼接起来，生成bundle.js
+browserify js/build/app.js -o bundle.js
+# 所有的css文件合并成bunlde.css
+ cat css/*/* css/*.css | sed 's/..\/..\/images/images/g' > bundle.css
+```
+
+4. 监控
+```
+npm install --save-dev watch
+```
+监控js/source和css目录，如果有变动，则执行shell脚本
+```
+watch "sh scripts/build.sh" js/source css
+```
+
+5. 部署
+见scripts/deploy.sh
